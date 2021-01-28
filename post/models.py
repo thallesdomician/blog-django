@@ -1,14 +1,7 @@
 from django.db import models
 from colorfield.fields import ColorField
 from django.utils.translation import gettext as _
-
-class Post(models.Model):
-    title = models.CharField(max_length=100)
-    subtitle = models.CharField(max_length=255)
-    header_image = models.ImageField(upload_to='block-image/header', null=True, blank=True)
-    thumbnail_image = models.ImageField(upload_to='block-image/thumbnail', null=True, blank=True)
-    resume = models.TextField(blank=True, null=True)
-    content = models.TextField(blank=True, null=True)
+from django.template.defaultfilters import slugify, default
 
 
 class Category(models.Model):
@@ -24,3 +17,26 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=255)
+    header_image = models.ImageField(upload_to='block-image/header', null=True, blank=True)
+    thumbnail_image = models.ImageField(upload_to='block-image/thumbnail', null=True, blank=True)
+    resume = models.TextField(blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
+    categories = models.ManyToManyField(Category)
+    slug = models.SlugField(max_length=100, unique=True, default="slug")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+
+
+

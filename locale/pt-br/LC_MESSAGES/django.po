@@ -28,11 +28,11 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/colorfield/fields.py:21
 msgid "Enter a valid hexa color, eg. #00000000"
-msgstr ""
+msgstr "Insira uma cor hexadecimal válida, ex. #000000"
 
 #: venv/lib/python3.6/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 #: venv/lib/python3.6/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/contrib/staticfiles/apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Arquivos Estáticos"
 
 #: venv/lib/python3.6/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
@@ -65,7 +65,7 @@ msgstr ""
 #: venv/lib/python3.6/site-packages/django/core/validators.py:102
 #: venv/lib/python3.6/site-packages/django/forms/fields.py:658
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Insira uma URL válida"
 
 #: venv/lib/python3.6/site-packages/django/core/validators.py:154
 msgid "Enter a valid integer."
@@ -73,7 +73,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/core/validators.py:165
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Insira um email válido"
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: venv/lib/python3.6/site-packages/django/core/validators.py:239

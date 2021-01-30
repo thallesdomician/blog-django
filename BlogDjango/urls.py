@@ -17,11 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from user import urls as user_url
 from post import urls as post_url
+from post.views import HomeView
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', include(post_url), ),
+    path('', HomeView.as_view(), name='home'),
+    path('post/', include(post_url),),
     path('admin/', admin.site.urls),
     path('user/', include(user_url)),
-
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

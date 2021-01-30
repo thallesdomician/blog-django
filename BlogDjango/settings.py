@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'pt-br'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -121,7 +122,7 @@ LANGUAGES = (
     ('en-us', u'English'),
     ('pt-br', u'Português'),
 )
-LOCALE_PATHS = ['/locale/']
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -129,8 +130,20 @@ LOCALE_PATHS = ['/locale/']
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'public'
+if not DEBUG:
+    STATIC_ROOT = 'static'
 
-MEDIA_URL = '/blog/file/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "public"),
+    ("css", os.path.join(BASE_DIR, "public/css")),
+    ("css-content", os.path.join(BASE_DIR, "public/css/content")),
+    ("js", os.path.join(BASE_DIR, "public/js")),
+    ("fonts", os.path.join(BASE_DIR, "public/fonts")),
+    ("js-animation", os.path.join(BASE_DIR, "public/js/animation")),
+    ("image-site", os.path.join(BASE_DIR, "public/image/site")),
+    ("image", os.path.join(BASE_DIR, "public/image")),
+]
 
-MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

@@ -1,26 +1,357 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<ul>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
 
-    {% for post in object_list %}
+{% block subheader %}
+    {% include 'subheader.html' %}
+{% endblock %}
 
-        <li>
-        {{ post }}
-
-        </li>
-
-    {% endfor %}
-
-</ul>
+{% block main %}
+    {#    <pre>#}
+    {#    {% debug %}#}
+    {##}
+    {#</pre>#}
 
 
-</body>
-</html>
+    <div class="sections_group">
+        <div class="extra_content">
+
+        </div>
+        <div class="section">
+            <div class="section_wrapper clearfix">
+                <!--  Filter Area -->
+                <div id="Filters" class="column one ">
+                    <ul class="filters_buttons">
+                        <li class="label">
+                            {% trans 'Filter by' %}
+                        </li>
+                        <li class="categories">
+                            <a class="open" href="#"><i class="icon-docs"></i>{% trans 'Categories' %}<i
+                                    class="icon-down-dir"></i></a>
+                        </li>
+                        {#                        <li class="tags">#}
+                        {#                            <a class="open" href="#"><i class="icon-tag"></i>Tags<i class="icon-down-dir"></i></a>#}
+                        {#                        </li>#}
+                        {#                        <li class="authors">#}
+                        {#                            <a class="open" href="#"><i class="icon-user"></i>Authors<i class="icon-down-dir"></i></a>#}
+                        {#                        </li>#}
+                        {#                        <li class="reset">#}
+                        {#                            <a class="close" data-rel="*" href="blog-full-classic.html"><i class="icon-cancel"></i>Show#}
+                        {#                                all</a>#}
+                        {#                        </li>#}
+                    </ul>
+                    <div class="filters_wrapper">
+                        <ul class="categories">
+                            {% for category in categories %}
+                                <li>
+                                    <a data-rel=".category-lifestyle" href="#">{{ category.name }}</a>
+                                </li>
+                            {% endfor %}
+                            <li class="close">
+                                <a href="#"><i class="icon-cancel"></i></a>
+                            </li>
+                        </ul>
+                        {#                        <ul class="tags">#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-css3" href="tag-page.html">css3</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-design" href="tag-page.html">design</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-eclipse" href="tag-page.html">eclipse</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-framework" href="tag-page.html">framework</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-grid" href="tag-page.html">grid</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-html5" href="tag-page.html">html5</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-mysql" href="tag-page.html">mysql</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-themeforest" href="tag-page.html">themeforest</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-wordpress" href="tag-page.html">wordpress</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".tag-zend" href="tag-page.html">zend</a>#}
+                        {#                            </li>#}
+                        {#                            <li class="close">#}
+                        {#                                <a href="#"><i class="icon-cancel"></i></a>#}
+                        {#                            </li>#}
+                        {#                        </ul>#}
+                        {#                        <ul class="authors">#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".author-admin" href="#">Muffin Group</a>#}
+                        {#                            </li>#}
+                        {#                            <li>#}
+                        {#                                <a data-rel=".author-milord" href="#">Milord</a>#}
+                        {#                            </li>#}
+                        {#                            <li class="close">#}
+                        {#                                <a href="#"><i class="icon-cancel"></i></a>#}
+                        {#                            </li>#}
+                        {#                        </ul>#}
+                    </div>
+                </div>
+                <!-- One full width row-->
+                <div class="column one column_blog">
+                    <div class="blog_wrapper isotope_wrapper">
+                        <!-- Blog timeline element-->
+                        <div class="posts_group lm_wrapper timeline">
+                            {% for post in post_list %}
+                                <div class="post-175 post  format-standard has-post-thumbnail  category-motion category-photography category-uncategorized tag-eclipse tag-grid tag-mysql post-item isotope-item clearfix">
+                                    <div class="date_label">
+                                        {{ post.created_at|date:"D, d M Y" }}
+                                    </div>
+                                    <div class="image_frame post-photo-wrapper scale-with-grid">
+                                        <div class="image_wrapper">
+                                            <a href="{% url 'post_detail' post.slug %}">
+                                                <div class="mask"></div>
+                                                <img width="576" height="450" src="{{ post.thumbnail_image.url }}"
+                                                     class="scale-with-grid wp-post-image" alt="beauty_portfolio_2"/>
+                                            </a>
+                                            <div class="image_links double">
+                                                <a href="{{ post.thumbnail_image.url }}" class="zoom" rel="prettyphoto"><i
+                                                        class="icon-search"></i></a><a
+                                                    href="{% url 'post_detail' post.slug %}" class="link"><i
+                                                    class="icon-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-desc-wrapper">
+                                        <div class="post-desc">
+                                            <div class="post-meta clearfix">
+                                                {#                                                <div class="author-date">#}
+                                                {#                                                            <span class="author"><span>Published by </span><i#}
+                                                {#                                                                    class="icon-user"></i> <a href="#">Muffin Group</a>#}
+                                                {#                                                            </span><span class="date"><span> at </span><i#}
+                                                {#                                                        class="icon-clock"></i> {{ post.created_at|date:"D, d M Y" }}</span>#}
+                                                {#                                                </div>#}
+                                                {% if post.categories.all.exists %}
+
+                                                    <div class="category">
+                                                        <span class="cat-btn">{% trans 'Categories' %}<i
+                                                                class="icon-down-dir"></i></span>
+                                                        <div class="cat-wrapper">
+                                                            <ul class="post-categories">
+                                                                {% for category_post in post.categories.all %}
+                                                                    <li>
+                                                                        <a href="#"
+                                                                           rel="category tag">{{ category_post.name }}</a>
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+
+                                            </div>
+
+                                            <div class="post-title">
+                                                <h2 class="entry-title"><a
+                                                        href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                                                </h2>
+                                            </div>
+                                            <div class="post-excerpt">
+                                                <span class="big">{{ post.resume|truncatewords:25 }}</span>
+                                            </div>
+                                            <div class="post-footer">
+                                                {#                                                <div class="button-love">#}
+                                                {#                                                    <span class="love-text">Do you like it?</span><a href="#"#}
+                                                {#                                                                                                     class="mfn-love "#}
+                                                {#                                                                                                     data-id="175"><span#}
+                                                {#                                                        class="icons-wrapper"><i class="icon-heart-empty-fa"></i><i#}
+                                                {#                                                        class="icon-heart-fa"></i></span><span class="label">343</span></a>#}
+                                                {#                                                </div>#}
+                                                <div class="post-links">
+                                                    {#                                                    <i class="icon-comment-empty-fa"></i>#}
+                                                    {#                                                    <a href="blog-single-content-builder.html#comments" class="post-comments">4</a>#}
+                                                    <i class="icon-doc-text"></i>
+                                                    <a href="{% url 'post_detail' post.slug %}"
+                                                       class="post-more">{% trans "Read more" %}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- One full width row-->
+                        <div class="column one pager_wrapper">
+                            <!-- Navigation Area -->
+                            <div class="pager">
+                                {% if page_obj.has_previous  %}
+                                    <a class="prev_page" href="?page=1">{% trans 'First page' %}<i
+                                            class="icon-right-open"></i></a>
+                                {% endif %}
+                                <div class="pages">
+
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page={{ page_obj.previous_page_number }}" >{{ page_obj.previous_page_number }}</a>
+                                    {% endif %}
+
+                                    <a href="?page={{ page_obj.number }}" class="active">{{ page_obj.number }}</a>
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}" >{{ page_obj.next_page_number }}</a>
+                                    {% endif %}
+                                </div>
+                                {% if page_obj.has_next %}
+                                    <a class="prev_page" href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last page' %}<i
+                                            class="icon-right-open"></i></a>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="four columns">
+        <div class="widget-area clearfix ">
+            <!-- Search form-->
+            <aside class="widget widget_search">
+                <h3>{% trans 'Search' %}</h3>
+                <form method="get" action="#">
+                    <input type="text" class="field" name="s" placeholder="{% trans 'Enter your search' %}"/>
+                    <input type="submit" class="submit" value="{% trans 'Search' %}"/>
+                </form>
+            </aside>
+            <!-- Text Area -->
+            <aside class="widget widget_text">
+                <h3>About our company</h3>
+                <div class="textwidget">
+                    Mauris imperdiet, urna mi, gravida sod ales. <span class="tooltip"
+                                                                       data-tooltip="Donec nisl ac turpis">Vivamus hendrerit</span>
+                    nulla erat ornare tortor in vestibulum id.
+                </div>
+            </aside>
+            <!-- Recent posts -->
+            <aside class="widget widget_mfn_recent_posts">
+                <h3>{% trans 'Latest posts' %}</h3>
+                <div class="Recent_posts">
+                    <ul>
+                        {% for post in  latest %}
+                            <li class="post ">
+                                <a href="{% url 'post_detail' post.slug %}">
+                                    <div class="photo">
+                                        <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
+                                             class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
+                                        {# <span class="c">4</span>#}
+                                    </div>
+                                    <div class="desc">
+                                        <h6>{{ post.title|truncatewords:3 }}</h6>
+                                        <span class="date">
+                                            <i class="icon-clock"></i>{{ post.created_at|date:"D, d M Y" }}
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
+            <!-- Categories Area -->
+            <aside class="widget widget_categories">
+                <h3>{% trans 'Categories' %}</h3>
+                <ul>
+                    {% for category in categories %}
+                        <li class="cat-item cat-item-61">
+                            <a href="#">{{ category.name|capfirst }}</a>
+                        </li>
+
+                    {% endfor %}
+
+
+                </ul>
+            </aside>
+            <!-- Archives Area -->
+            <aside id="archives-3" class="widget widget_archive">
+                <h3>{% trans 'Archives' %}</h3>
+                <ul>
+                    <li>
+                        <a href='#'>May 2014</a>
+                    </li>
+                    <li>
+                        <a href='#'>April 2014</a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- Recent Comments Area -->
+            {#            <aside class="widget widget_mfn_recent_comments">#}
+            {#                <h3>Recent comments</h3>#}
+            {#                <div class="Recent_comments">#}
+            {#                    <ul>#}
+            {#                        <li>#}
+            {#                            <span class="date_label">March 31, 2015</span>#}
+            {#                            <p>#}
+            {#                                <i class="icon-user"></i><strong>Muffin Group</strong> commented on <a#}
+            {#                                    href="blog-single-content-builder.html#comment-7"#}
+            {#                                    title="Muffin Group | Content builder for posts">Content builder for posts</a>#}
+            {#                            </p>#}
+            {#                        </li>#}
+            {#                        <li>#}
+            {#                            <span class="date_label">March 31, 2015</span>#}
+            {#                            <p>#}
+            {#                                <i class="icon-user"></i><strong>Muffin Group</strong> commented on <a#}
+            {#                                    href="blog-single-content-builder.html#comment-6"#}
+            {#                                    title="Muffin Group | Content builder for posts">Content builder for posts</a>#}
+            {#                            </p>#}
+            {#                        </li>#}
+            {#                    </ul>#}
+            {#                </div>#}
+            {#            </aside>#}
+            <!-- Meta Links Area -->
+            {#            <aside id="meta-3" class="widget widget_meta">#}
+            {#                <h3>Meta</h3>#}
+            {#                <ul>#}
+            {#                    <li>#}
+            {#                        <a href="#">Log in</a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="https://wordpress.org/"#}
+            {#                           title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>#}
+            {#                    </li>#}
+            {#                </ul>#}
+            {#            </aside>#}
+            <!--Tag Cloud -->
+            {#            <aside class="widget widget_tag_cloud">#}
+            {#                <h3>Tags</h3>#}
+            {#                <div class="tagcloud">#}
+            {#                    <a href='tag-page.html' class='tag-link-20' title='3 topics'>css3</a> <a href='tag-page.html'#}
+            {#                                                                                             class='tag-link-21'#}
+            {#                                                                                             title='2 topics'>design</a>#}
+            {#                    <a href='tag-page.html' class='tag-link-22' title='2 topics'>eclipse</a> <a href='tag-page.html'#}
+            {#                                                                                                class='tag-link-23'#}
+            {#                                                                                                title='2 topics'>framework</a>#}
+            {#                    <a href='tag-page.html' class='tag-link-24' title='2 topics'>grid</a> <a href='tag-page.html'#}
+            {#                                                                                             class='tag-link-25'#}
+            {#                                                                                             title='2 topics'>html5</a>#}
+            {#                    <a href='tag-page.html' class='tag-link-26' title='2 topics'>mysql</a> <a href='tag-page.html'#}
+            {#                                                                                              class='tag-link-27'#}
+            {#                                                                                              title='2 topics'>themeforest</a>#}
+            {#                    <a href='tag-page.html' class='tag-link-28' title='2 topics'>wordpress</a> <a href='tag-page.html'#}
+            {#                                                                                                  class='tag-link-29'#}
+            {#                                                                                                  title='2 topics'>zend</a>#}
+            {#                </div>#}
+            {#            </aside>#}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

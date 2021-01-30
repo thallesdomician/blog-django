@@ -3,6 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 @login_required
-def show(request) :
-    return render(request, 'show.html')
+def detail(request):
+    return render(request, 'base.html')
 

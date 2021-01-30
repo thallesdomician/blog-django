@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    {{ object }} - <a href="{% url 'post_update' post.slug %}">Editar</a>
+    <a href="{% url 'post_delete' post.slug %}">Remover</a>
+
+    <div class="sections_group">
+        <div class="section mcb-section mcb-section-jrllcekxu"
+             style="padding-top:100px;padding-bottom:75px;background-color:#54585d;background-image:url(images/law-blog-bottom-bg.png);background-repeat:no-repeat;background-position:center bottom;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap mcb-wrap-6qhno0c8e one valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-zlkhkv8ef one column_column">
+                            <div class="column_attr clearfix align_center" style>
+                                <h1>{{ object.title }}</h1>
+                                <p>
+                                    {{ object.subtitle }}
+                                </p>
+                                <hr class="no_line" style="margin: 0 auto 30px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if object.header_image.name %}
+                    <div class="wrap mcb-wrap mcb-wrap-dztae8a56 one valign-top clearfix" style="padding:0 5%">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column mcb-item-9rcilo9m8 one column_image">
+                                <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                    <div class="image_wrapper">
+                                        <img class="scale-with-grid" src="{{ object.header_image.url }}" alt="{{ object.title }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="section mcb-section mcb-section-r3ry1u85u"
+             style="padding-top:0px;padding-bottom:100px;background-color:#5f6469">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap mcb-wrap-od5hmvzqk one-fourth valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-jyc29esje one column_placeholder">
+                            <div class="placeholder">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-jfnpdw8ac one-second valign-top clearfix" style="padding:0 2%">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-9plhv9agm one column_column">
+                            <div class="column_attr clearfix" style>
+                                <hr class="no_line" style="margin: 0 auto 10px;">
+                                <p>
+                                    <i>
+                                        {{ object.resume }}
+                                    </i>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column mcb-column mcb-item-q1cwkrjdz one column_column">
+                            <div class="column_attr clearfix" style="padding:20px 0 0 0;">
+                                <h4>Vindication</h4>
+                                <hr class="no_line" style="margin: 0 auto 10px;">
+                                <p>
+                                    Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa
+                                    nibh, tincidunt ut eros a, vulputate consequat odio. Vestibulum vehicula tempor
+                                    nulla, sed hendrerit urna interdum in. Donec et nibh maximus, congue est eu, mattis
+                                    nunc.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column mcb-column mcb-item-x7s05psok one column_column column-margin-20px">
+                            <div class="column_attr clearfix"
+                                 style="background-image:url('images/law-blog-paragraph2.png');background-repeat:no-repeat;background-position:left top;padding:0 0 0 30px;">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris dolor, gravida a
+                                variu. Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="column mcb-column mcb-item-wrruijg86 one column_column">
+                            <div class="column_attr clearfix"
+                                 style="background-image:url('images/law-blog-paragraph2.png');background-repeat:no-repeat;background-position:left top;padding:0 0 0 30px;">
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                Orci varius natoque penatibus et magnis dis parturient montes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-a02g5l2xa one-fourth valign-top clearfix"
+                     style="padding:20px 3% 0;background-color:#84878d">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-pin5yqeuy one column_column">
+                            <div class="column_attr clearfix" style>
+                                <h1>i</h1><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et explicab nim.</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-5akj1mhqf divider valign-top clearfix">
+                    <div class="mcb-wrap-inner"></div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-7kmdyn11k one-sixth valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-vzawl7fzq one column_placeholder">
+                            <div class="placeholder">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-o0b6j73tv two-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-thqy8dd2x one column_divider">
+                            <hr class=" hr_color" style="margin: 0 auto 50px;">
+                        </div>
+                        <div class="column mcb-column mcb-item-1erbukel4 one column_column column-margin-40px">
+                            <div class="column_attr clearfix align_center" style="padding:0 2%;">
+                                <p>
+                                    Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula
+                                    volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt ut eros a, vulputate
+                                    consequat odio. Vestibulum vehicula tempor nulla, sed hendrerit urna interdum in.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column mcb-column mcb-item-pbgla080l one column_divider">
+                            <hr class=" hr_color" style="margin: 0 auto 20px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-f10vcpzgm divider valign-top clearfix">
+                    <div class="mcb-wrap-inner"></div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-17gtk6kb5 one-fourth valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-15wpcaqmp one column_placeholder">
+                            <div class="placeholder">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap mcb-wrap-07htk1v8n one-second valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column mcb-item-gcdgiq98u one column_column">
+                            <div class="column_attr clearfix" style="padding:20px 0 0 0;">
+                                <h4>Ponter estonia qualificare modifile pal</h4>
+                                <hr class="no_line" style="margin: 0 auto 10px;">
+                                <p>
+                                    Ut ultricies imperdiet sodales. Aliquam fringilla aliquam ex sit amet elementum.
+                                    Proin bibendum sollicitudin feugiat. Curabitur ut egestas justo, vitae molestie
+                                    ante. Integer magna purus, commodo in diam nec, pretium auctor sapien.
+                                </p>
+                                <p>
+                                    In pulvinar, ipsum eu dignissim facilisis, massa justo varius purus, non dictum elit
+                                    nibh ut massa. Nam massa erat, aliquet a rutrum eu, sagittis ac nibh. Pellentesque
+                                    velit dolor, suscipit in ligula a, suscipit rhoncus dui.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

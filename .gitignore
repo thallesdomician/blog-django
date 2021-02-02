@@ -4,5 +4,7 @@
 *.sqlite3
 # Name of your virtuan env
 venv/
+static/
+media/
 .env
 *.pyc

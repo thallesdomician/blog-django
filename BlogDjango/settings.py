@@ -129,17 +129,18 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "public"),
-    ("css", os.path.join(BASE_DIR, "public/css")),
-    ("css-content", os.path.join(BASE_DIR, "public/css/content")),
-    ("js", os.path.join(BASE_DIR, "public/js")),
-    ("fonts", os.path.join(BASE_DIR, "public/fonts")),
-    ("js-animation", os.path.join(BASE_DIR, "public/js/animation")),
-    ("image-site", os.path.join(BASE_DIR, "public/image/site")),
-    ("image", os.path.join(BASE_DIR, "public/image")),
+    os.path.join(BASE_DIR, "public-files"),
+    ("css", os.path.join(BASE_DIR, "public-files/css")),
+    ("css-content", os.path.join(BASE_DIR, "public-files/css/content")),
+    ("js", os.path.join(BASE_DIR, "public-files/js")),
+    ("fonts", os.path.join(BASE_DIR, "public-files/fonts")),
+    ("js-animation", os.path.join(BASE_DIR, "public-files/js/animation")),
+    ("image-site", os.path.join(BASE_DIR, "public-files/image/site")),
+    ("image", os.path.join(BASE_DIR, "public-files/image")),
 ]
 
 MEDIA_URL = '/media/'

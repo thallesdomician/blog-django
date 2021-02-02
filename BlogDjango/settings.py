@@ -28,9 +28,9 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['206.189.187.102','thalles.ninja','localhost']
+ALLOWED_HOSTS = ['206.189.187.102', 'thalles.ninja', 'localhost']
 
-FILE_UPLOAD_PERMISSIONS=0o644
+FILE_UPLOAD_PERMISSIONS = 0o644
 
 # Application definition
 

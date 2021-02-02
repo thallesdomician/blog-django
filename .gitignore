@@ -7,4 +7,4 @@ venv/
 static/
 media/
 .env
-*pyc
+*.pyc

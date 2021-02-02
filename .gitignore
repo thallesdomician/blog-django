@@ -255,7 +255,7 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/django,pycharm
 media/*
-public/*
+static/*
 *.sqlite3
 *pyc
 

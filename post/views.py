@@ -1,10 +1,11 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post, Category
 from django.shortcuts import render
 from django.utils.translation import gettext as _
@@ -25,6 +26,13 @@ class PostList(ListView):
         context['latest'] = Post.objects.all().order_by('-created_at')[:2]
         context['subheader'] = _('Blog')
         return context
+
+class PostCreate(CreateView):
+    model = Post
+    fields = ['title', 'subtitle', 'header_image', 'thumbnail_image', 'resume', 'content', 'categories']
+    template_name_suffix = '_create_form'
+    def get_success_url(self, **kwargs):
+        return reverse_lazy("post_detail", args=(self.object.slug,))
 
 class PostUpdate(UpdateView):
     model = Post

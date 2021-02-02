@@ -8,3 +8,4 @@ static/
 media/
 .env
 *.pyc
+post/__pycache__/*

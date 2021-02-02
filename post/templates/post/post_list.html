@@ -183,31 +183,36 @@
                             {% endfor %}
                         </div>
                         <!-- One full width row-->
-                        <div class="column one pager_wrapper">
-                            <!-- Navigation Area -->
-                            <div class="pager">
-                                {% if page_obj.has_previous  %}
-                                    <a class="prev_page" href="?page=1">{% trans 'First page' %}<i
-                                            class="icon-right-open"></i></a>
-                                {% endif %}
-                                <div class="pages">
+                        {% if post_list %}
 
+
+                            <div class="column one pager_wrapper">
+                                <!-- Navigation Area -->
+                                <div class="pager">
                                     {% if page_obj.has_previous %}
-                                        <a href="?page={{ page_obj.previous_page_number }}" >{{ page_obj.previous_page_number }}</a>
+                                        <a class="prev_page" href="?page=1">{% trans 'First page' %}<i
+                                                class="icon-right-open"></i></a>
                                     {% endif %}
+                                    <div class="pages">
 
-                                    <a href="?page={{ page_obj.number }}" class="active">{{ page_obj.number }}</a>
+                                        {% if page_obj.has_previous %}
+                                            <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                                        {% endif %}
+
+                                        <a href="?page={{ page_obj.number }}" class="active">{{ page_obj.number }}</a>
+                                        {% if page_obj.has_next %}
+                                            <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                                        {% endif %}
+                                    </div>
                                     {% if page_obj.has_next %}
-                                        <a href="?page={{ page_obj.next_page_number }}" >{{ page_obj.next_page_number }}</a>
+                                        <a class="prev_page"
+                                           href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last page' %}<i
+                                                class="icon-right-open"></i></a>
                                     {% endif %}
-                                </div>
-                                {% if page_obj.has_next %}
-                                    <a class="prev_page" href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last page' %}<i
-                                            class="icon-right-open"></i></a>
-                                {% endif %}
 
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

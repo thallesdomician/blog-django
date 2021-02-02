@@ -257,6 +257,5 @@ fabric.properties
 media/*
 public/*
 *.sqlite3
-.venv
 *pyc
 

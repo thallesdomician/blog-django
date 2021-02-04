@@ -1,12 +1,13 @@
 from django import forms
 from .models import Post
-
-from django.utils.translation import gettext as _
+from tinymce.widgets import TinyMCE
+from tinymce import models as tinymce_models
 
 
 
 class PostForm(forms.ModelForm):
-    content = forms.CharField(widget=forms.Textarea(attrs={'id': 'editor'}), label=_('Content'))
+    resume = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 10}))
+    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
     class Meta:
         model = Post
         fields = [

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'colorfield',
     'user',
     'post',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

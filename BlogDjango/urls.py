@@ -22,12 +22,12 @@ from post.views import HomeView
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('post/', include(post_url),),
+    path('post/', include(post_url), ),
     path('admin/', admin.site.urls),
     path('user/', include(user_url)),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

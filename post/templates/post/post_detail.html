@@ -1,163 +1,258 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block subheader %}
+    {% include 'subheader.html' with subheader=object.title %}
+{% endblock %}
 {% block main %}
-
     <div class="sections_group">
-        <div class="section mcb-section mcb-section-jrllcekxu"
-             style="padding-top:100px;padding-bottom:75px;background-color:#54585d;background-image:url(images/law-blog-bottom-bg.png);background-repeat:no-repeat;background-position:center bottom;">
-            <div class="section_wrapper mcb-section-inner">
-                <div class="wrap mcb-wrap mcb-wrap-6qhno0c8e one valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-zlkhkv8ef one column_column">
-                            <div class="column_attr clearfix align_center" style>
-                                <h1>{{ object.title }}</h1>
-                                <p>
-                                    {{ object.subtitle }}
-                                </p>
-                                <hr class="no_line" style="margin: 0 auto 30px;">
-                            </div>
+        <div id="post-175"
+             class="post-175 post  format-standard has-post-thumbnail  category-motion category-photography category-uncategorized tag-eclipse tag-grid tag-mysql no-title"
+             style="padding-top: 30px">
+            <div class="section section-post-header">
+                <h3>{{ object.subtitle }}</h3>
+                <div class="section_wrapper clearfix">
+                    <!-- Posts Navigation -->
+                    <!-- One full width row-->
+
+                    <!-- Post Header-->
+                    <!-- One full width row-->
+                    <div class="column one post-header">
+                        <div class="button-love">
+                            <a href="#" class="mfn-love " data-id="175"><span class="icons-wrapper"><i
+                                    class="icon-heart-empty-fa"></i><i class="icon-heart-fa"></i></span><span
+                                    class="label">354</span></a>
                         </div>
-                    </div>
-                </div>
-                {% if object.header_image.name %}
-                    <div class="wrap mcb-wrap mcb-wrap-dztae8a56 one valign-top clearfix" style="padding:0 5%">
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column mcb-item-9rcilo9m8 one column_image">
-                                <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
-                                    <div class="image_wrapper">
-                                        <img class="scale-with-grid" src="{{ object.header_image.url }}" alt="{{ object.title }}">
+                        <div class="title_wrapper">
+                            <div class="post-meta clearfix">
+                                <div class="author-date">
+                                    <span class="author">Published by <i class="icon-user"></i> <a
+                                            href="#">Muffin Group</a></span><span class="date">at <i
+                                        class="icon-clock"></i>
+														<time class="entry-date" datetime="2014-05-13T15:40:00+00:00">
+															May 13, 2014
+														</time></span>
+                                </div>
+                                <div class="category mata-tags">
+                                    <span class="cat-btn">Tags <i class="icon-down-dir"></i></span>
+                                    <div class="cat-wrapper">
+                                        <ul>
+                                            {% for category in categories %}
+                                                <li>
+
+                                                    <a href="tag-page.html" style="
+                                                            background-color: {{ category.color_background }};
+                                                            color: {{ category.color_text }}
+                                                            " >{{ category.name }}</a>
+                                                </li>
+
+                                            {% endfor %}
+                                            <li>
+                                                <a href="tag-page.html">grid</a>
+                                            </li>
+                                            <li>
+                                                <a href="tag-page.html">mysql</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            </div>
-        </div>
-        <div class="section mcb-section mcb-section-r3ry1u85u"
-             style="padding-top:0px;padding-bottom:100px;background-color:#5f6469">
-            <div class="section_wrapper mcb-section-inner">
-                <div class="wrap mcb-wrap mcb-wrap-od5hmvzqk one-fourth valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-jyc29esje one column_placeholder">
-                            <div class="placeholder">
-                                &nbsp;
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrap mcb-wrap mcb-wrap-jfnpdw8ac one-second valign-top clearfix" style="padding:0 2%">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-9plhv9agm one column_column">
-                            <div class="column_attr clearfix" style>
-                                <hr class="no_line" style="margin: 0 auto 10px;">
-                                <p>
-                                    <i>
-                                        {{ object.resume }}
-                                    </i>
+                    <!-- Post Featured Element (image / video / gallery)-->
+                    <!-- One full width row-->
+                    <div class="column one">
 
-                                </p>
-                            </div>
-                        </div>
-                        <div class="column mcb-column mcb-item-q1cwkrjdz one column_column">
-                            <div class="column_attr clearfix" style="padding:20px 0 0 0;">
-                                <h4>Vindication</h4>
-                                <hr class="no_line" style="margin: 0 auto 10px;">
-                                <p>
-                                    Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa
-                                    nibh, tincidunt ut eros a, vulputate consequat odio. Vestibulum vehicula tempor
-                                    nulla, sed hendrerit urna interdum in. Donec et nibh maximus, congue est eu, mattis
-                                    nunc.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="column mcb-column mcb-item-x7s05psok one column_column column-margin-20px">
-                            <div class="column_attr clearfix"
-                                 style="background-image:url('images/law-blog-paragraph2.png');background-repeat:no-repeat;background-position:left top;padding:0 0 0 30px;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mauris dolor, gravida a
-                                variu. Lorem ipsum dolor sit amet.
-                            </div>
-                        </div>
-                        <div class="column mcb-column mcb-item-wrruijg86 one column_column">
-                            <div class="column_attr clearfix"
-                                 style="background-image:url('images/law-blog-paragraph2.png');background-repeat:no-repeat;background-position:left top;padding:0 0 0 30px;">
-                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                                Orci varius natoque penatibus et magnis dis parturient montes.
+                        <div class="image_frame scale-with-grid">
+                            <div class="image_wrapper">
+                                <a href="{{ post.header_image.url }}" rel="prettyphoto">
+                                    <div class="mask"></div>
+                                    <img width="1200" height="480" src="{{ post.header_image.url }}"
+                                         class="scale-with-grid wp-post-image" alt="beauty_portfolio_2">
+                                </a>
+                                <div class="image_links">
+                                    <a href="{{ post.header_image.url }}" class="zoom" rel="prettyphoto"><i
+                                            class="icon-search"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="wrap mcb-wrap mcb-wrap-a02g5l2xa one-fourth valign-top clearfix"
-                     style="padding:20px 3% 0;background-color:#84878d">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-pin5yqeuy one column_column">
-                            <div class="column_attr clearfix" style>
-                                <h1>i</h1><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et explicab nim.</em>
+            </div>
+            <!-- Post Content-->
+            <div class="post-wrapper-content">
+                <div class="entry-content">
+                    <div class="section flv_sections_11">
+                        <div class="section_wrapper clearfix">
+                            <div class="items_group clearfix">
+                                <!-- One full width row-->
+                                <div class="column one column_column">
+                                    <div class="column_attr ">
+                                        {{ object.resume|safe }}
+                                    </div>
+                                </div>
+                                <!-- One Third (1/3) Column -->
+
+                                <!-- One full width row-->
+                                <div class="column one column_column">
+                                    <div class="column_attr ">
+                                        {{ object.content|safe }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="wrap mcb-wrap mcb-wrap-5akj1mhqf divider valign-top clearfix">
-                    <div class="mcb-wrap-inner"></div>
+                <div class="section section-post-footer">
+                    <div class="section_wrapper clearfix">
+                        <!-- One full width row-->
+                        <div class="column one post-pager"></div>
+                    </div>
                 </div>
-                <div class="wrap mcb-wrap mcb-wrap-7kmdyn11k one-sixth valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-vzawl7fzq one column_placeholder">
-                            <div class="placeholder">
-                                &nbsp;
+                <!--Author Info Area-->
+                <div class="section section-post-about">
+                    <div class="section_wrapper clearfix">
+                        <!-- One full width row-->
+                        <div class="column one author-box">
+                            <div class="author-box-wrapper">
+                                <div class="avatar-wrapper">
+                                    <img alt="Muffin Group"
+                                         src="http://1.gravatar.com/avatar/b8da4787ca5ff7a6bb9bbabecce2daa2?s=64&amp;d=&amp;r=G"
+                                         class="avatar avatar-64 photo" height="64" width="64">
+                                </div>
+                                <div class="desc-wrapper">
+                                    <h5><a href="#">Muffin Group</a></h5>
+                                    <div class="desc">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in
+                                        mi at felis aliquet cong ue. Ut a est eget ligula molestie gravida. Curabitur
+                                        massa. Donec eleifend.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="wrap mcb-wrap mcb-wrap-o0b6j73tv two-third valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-thqy8dd2x one column_divider">
-                            <hr class=" hr_color" style="margin: 0 auto 50px;">
-                        </div>
-                        <div class="column mcb-column mcb-item-1erbukel4 one column_column column-margin-40px">
-                            <div class="column_attr clearfix align_center" style="padding:0 2%;">
-                                <p>
-                                    Mauris rhoncus orci in imperdiet placerat. Vestibulum euismod nisl suscipit ligula
-                                    volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt ut eros a, vulputate
-                                    consequat odio. Vestibulum vehicula tempor nulla, sed hendrerit urna interdum in.
-                                </p>
+            </div>
+            <!-- Related posts area-->
+            <div class="section section-post-related">
+                <div class="section_wrapper clearfix">
+                    <div class="section-related-adjustment">
+                        <h4>Related posts</h4>
+                        <!-- One Third (1/3) Column -->
+                        <div class="column one-third post-related post-186 post  format-image has-post-thumbnail  category-mobile category-photography category-uncategorized tag-design tag-html5 ">
+                            <div class="image_frame scale-with-grid">
+                                <div class="image_wrapper">
+                                    <a href="blog-single-vertical-photo.html">
+                                        <div class="mask"></div>
+                                        <img width="500" height="649" src="images/blog_vertical.jpg"
+                                             class="scale-with-grid wp-post-image" alt="blog_vertical">
+                                    </a>
+                                    <div class="image_links double">
+                                        <a href="images/blog_vertical.jpg" class="zoom" rel="prettyphoto"><i
+                                                class="icon-search"></i></a><a href="blog-single-vertical-photo.html"
+                                                                               class="link"><i
+                                            class="icon-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date_label">
+                                May 13, 2014
+                            </div>
+                            <div class="desc">
+                                <h4><a href="blog-single-vertical-photo.html">Post with vertical photo</a></h4>
+                                <hr class="hr_color">
+                                <a href="blog-single-vertical-photo.html"
+                                   class="button button_left button_js kill_the_icon"><span class="button_icon"><i
+                                        class="icon-layout"></i></span><span class="button_label">Read more</span></a>
                             </div>
                         </div>
-                        <div class="column mcb-column mcb-item-pbgla080l one column_divider">
-                            <hr class=" hr_color" style="margin: 0 auto 20px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="wrap mcb-wrap mcb-wrap-f10vcpzgm divider valign-top clearfix">
-                    <div class="mcb-wrap-inner"></div>
-                </div>
-                <div class="wrap mcb-wrap mcb-wrap-17gtk6kb5 one-fourth valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-15wpcaqmp one column_placeholder">
-                            <div class="placeholder">
-                                &nbsp;
+                        <!-- One Third (1/3) Column -->
+                        <div class="column one-third post-related post-190 post  format-quote  category-uncategorized tag-css3 tag-design  no-img">
+                            <blockquote>
+                                <a href="blog-single-blockquote.html">Sed dignissim justo. Suspendisse fermentum erat.
+                                    Duis consequat tortor. Mauris ut tellus a dolor. Suspendisse nec tellus. Donec quis
+                                    lacus magna, sollicitudin id, turpis. Mauris in velit vel sollicitudin justo. Proin
+                                    vitae massa nec cursus magna. Fusce blandit eu, ullamcorper in.</a>
+                            </blockquote>
+                            <div class="date_label">
+                                May 13, 2014
+                            </div>
+                            <div class="desc">
+                                <hr class="hr_color">
+                                <a href="blog-single-blockquote.html"
+                                   class="button button_left button_js kill_the_icon"><span class="button_icon"><i
+                                        class="icon-layout"></i></span><span class="button_label">Read more</span></a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="wrap mcb-wrap mcb-wrap-07htk1v8n one-second valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column mcb-item-gcdgiq98u one column_column">
-                            <div class="column_attr clearfix" style="padding:20px 0 0 0;">
-                                <h4>Ponter estonia qualificare modifile pal</h4>
-                                <hr class="no_line" style="margin: 0 auto 10px;">
-                                <p>
-                                    Ut ultricies imperdiet sodales. Aliquam fringilla aliquam ex sit amet elementum.
-                                    Proin bibendum sollicitudin feugiat. Curabitur ut egestas justo, vitae molestie
-                                    ante. Integer magna purus, commodo in diam nec, pretium auctor sapien.
-                                </p>
-                                <p>
-                                    In pulvinar, ipsum eu dignissim facilisis, massa justo varius purus, non dictum elit
-                                    nibh ut massa. Nam massa erat, aliquet a rutrum eu, sagittis ac nibh. Pellentesque
-                                    velit dolor, suscipit in ligula a, suscipit rhoncus dui.
-                                </p>
+                        <!-- One Third (1/3) Column -->
+                        <div class="column one-third post-related post-193 post  format-standard has-post-thumbnail  category-photography category-uncategorized  tag-mysql tag-zend">
+                            <div class="image_frame scale-with-grid">
+                                <div class="image_wrapper">
+                                    <div id="rev_slider_16_2_wrapper"
+                                         class="rev_slider_wrapper fullwidthbanner-container flv_rev_20"
+                                         style="overflow: visible; height: 111px;">
+                                        <div id="rev_slider_16_2"
+                                             class="rev_slider fullwidthabanner revslider-initialised tp-simpleresponsive"
+                                             data-version="5.0.4.1"
+                                             style="margin-top: 0px; margin-bottom: 0px; height: 111px;">
+                                            <ul class="tp-revslider-mainul"
+                                                style="visibility: visible; display: block; overflow: hidden; width: 230px; height: 100%; max-height: none; left: 0px;">
+                                                <li data-index="rs-21" data-transition="slidehorizontal"
+                                                    data-slotamount="7" data-easein="default" data-easeout="default"
+                                                    data-masterspeed="300"
+                                                    data-thumb="images/home_betheme_blog_3-100x50.jpg" data-rotate="0"
+                                                    data-saveperformance="off" data-title="Slide" data-description=""
+                                                    class="tp-revslider-slidesli active-revslide"
+                                                    style="width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1; background-color: rgba(255, 255, 255, 0);">
+                                                    <div class="slotholder"
+                                                         style="width: 100%; height: 100%; backface-visibility: hidden; left: 0px; top: 0px; position: absolute; transform: translate3d(0px, 0px, 0px); visibility: inherit; opacity: 1;">
+                                                        <!--Runtime Modification - Img tag is Still Available for SEO Goals in Source - <img src="plugins/rs-plugin/assets/images/dummy.png " alt="" width="1200" height="800" data-lazyload="images/1200x800.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg defaultimg" data-no-retina="">-->
+                                                        <div class="tp-bgimg defaultimg"
+                                                             style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;images/1200x800.jpg&quot;); background-size: cover; background-position: center top; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;"
+                                                             src="images/1200x800.jpg"></div>
+                                                    </div>
+                                                </li>
+                                                <li data-index="rs-22" data-transition="slidehorizontal"
+                                                    data-slotamount="7" data-easein="default" data-easeout="default"
+                                                    data-masterspeed="300"
+                                                    data-thumb="images/home_betheme_blog_4-100x50.jpg" data-rotate="0"
+                                                    data-saveperformance="off" data-title="Slide" data-description=""
+                                                    class="tp-revslider-slidesli"
+                                                    style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0; background-color: rgba(255, 255, 255, 0);">
+                                                    <div class="slotholder"
+                                                         style="width: 100%; height: 100%; backface-visibility: hidden; left: 0px; top: 0px; position: absolute; transform: translate3d(0px, 0px, 0px); visibility: inherit; opacity: 1;">
+                                                        <!--Runtime Modification - Img tag is Still Available for SEO Goals in Source - <img src="plugins/rs-plugin/assets/images/dummy.png " alt="" width="1200" height="800" data-lazyload="images/1200x800.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg defaultimg" data-no-retina="">-->
+                                                        <div class="tp-bgimg defaultimg"
+                                                             style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;images/1200x800.jpg&quot;); background-size: cover; background-position: center top; width: 100%; height: 100%; opacity: 0; visibility: hidden; z-index: 20;"
+                                                             src="images/1200x800.jpg"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="tp-bannertimer flv_rev_21"
+                                                 style="width: 94.3111%; visibility: visible; transform: translate3d(0px, 0px, 0px);"></div>
+                                            <div class="tp-loader off" style="display: none;">
+                                                <div class="dot1"></div>
+                                                <div class="dot2"></div>
+                                                <div class="bounce1"></div>
+                                                <div class="bounce2"></div>
+                                                <div class="bounce3"></div>
+                                            </div>
+                                            <div class="tp-leftarrow tparrows uranus  noSwipe tp-forcenotvisible"
+                                                 style="top: 50%; transform: matrix(1, 0, 0, 1, 30, -20); left: 0px; visibility: hidden; opacity: 0;"></div>
+                                            <div class="tp-rightarrow tparrows uranus  noSwipe tp-forcenotvisible"
+                                                 style="top: 50%; transform: matrix(1, 0, 0, 1, -70, -20); left: 100%; visibility: hidden; opacity: 0;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date_label">
+                                May 13, 2014
+                            </div>
+                            <div class="desc">
+                                <h4><a href="blog-single-slideshow.html">Post with slideshow</a></h4>
+                                <hr class="hr_color">
+                                <a href="blog-single-slideshow.html" class="button button_left button_js kill_the_icon"><span
+                                        class="button_icon"><i class="icon-layout"></i></span><span
+                                        class="button_label">Read more</span></a>
                             </div>
                         </div>
                     </div>

@@ -59,6 +59,13 @@ class PostUpdate(UpdateView):
 
 class PostView(DetailView):
     model = Post
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['subheader'] = _('Update Post')
+        context['categories'] = Category.objects.filter(post__isnull=False).order_by('name')
+        context['latest'] = Post.objects.all().order_by('-created_at')[:2]
+        context['aside'] = True
+        return context
 
 class PostDelete(DeleteView):
     model = Post

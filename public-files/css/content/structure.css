@@ -2967,7 +2967,7 @@ body.header-stack:not(.template-slider) #Header {
 	position: relative;
 }
 body:not(.template-slider) .widget-area {
-	margin-top: -30px;
+	/*margin-top: -30px;*/
 }
 .widget-area:before {
 	content: "";

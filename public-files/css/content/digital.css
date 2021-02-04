@@ -586,7 +586,7 @@ table tr:hover td {
 	position: absolute;
 	left: -10px;
 	top: 2px;
-	background-image: url(../../../images/top_bar_right_shadow.png);
+	background-image: url(../../image/top_bar_right_shadow.png);
 	background-repeat: repeat-y;
 	-moz-transform: skewX(0deg) skewY(-25deg);
 	-webkit-transform: skewX(0deg) skewY(-25deg);
@@ -983,7 +983,7 @@ table tr:hover td {
 	z-index: 205;
 	margin: 0;
 	display: none;
-	background-image: url(../../../images/box_shadow.png);
+	background-image: url(../../image/box_shadow.png);
 	background-repeat: repeat-x;
 	background-position: left top;
 }
@@ -1368,8 +1368,8 @@ input[type="date"]:focus, input[type="email"]:focus, input[type="number"]:focus,
 #gallery-1 .gallery-caption {
 	margin-left: 0;
 }
-.single-photo-wrapper, .project-description {
-	display: none;
+.project-description {
+	/*display: none;*/
 }
 
 /*
@@ -1421,17 +1421,17 @@ body.contact #Content, body.content_no_padding #Content {
 .the-icons.span3 .i-name {
 	padding-left: 40px;
 }
-@media only screen and min-width: 768px and max-width: 959px {
+@media only screen and (min-width: 768px) and (max-width: 959px) {
 	.the-icons.span3 {
 		width: 33.333%;
 	}
 }
-@media only screen and min-width: 480px and max-width: 767px {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 	.the-icons.span3 {
 		width: 50%;
 	}
 }
-@media only screen and max-width: 479px {
+@media only screen and (max-width: 479px) {
 	.the-icons.span3 {
 		width: 100%;
 	}
@@ -1453,7 +1453,7 @@ body.contact #Content, body.content_no_padding #Content {
 	box-sizing: border-box;
 }
 .section-border-top {
-	border-top: 1px solid rgba0, 0, 0, .08;
+	border-top: 1px solid rgba(0, 0, 0, .08);
 }
 .notable_works .items_group {
 	background: #eaeae8;
@@ -1530,22 +1530,22 @@ body.contact #Content, body.content_no_padding #Content {
 .sections_style_2, div.sections_style_2 {
 	padding-top: 60px;
 	padding-bottom: 0px;
-	background-color:
+	background-color: #0d0d0d;
 }
 .sections_style_3, div.sections_style_3 {
 	padding-top: 60px;
 	padding-bottom: 20px;
-	background-color:
+	: #0d0d0d;
 }
 .sections_style_4, div.sections_style_4 {
 	padding-top: 40px;
 	padding-bottom: 0px;
-	background-color:
+	background-color: #0d0d0d;
 }
 .sections_style_5, div.sections_style_5 {
 	padding-top: 70px;
 	padding-bottom: 0px;
-	background-color:
+	background-color: #0d0d0d;
 }
 .flv_span_12, span.flv_span_12, div.flv_span_12 {
 	padding-top: 12px;

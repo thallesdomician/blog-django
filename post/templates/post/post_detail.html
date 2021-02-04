@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block main %}
-    {{ object }} - <a href="{% url 'post_update' post.slug %}">Editar</a>
-    <a href="{% url 'post_delete' post.slug %}">Remover</a>
 
     <div class="sections_group">
         <div class="section mcb-section mcb-section-jrllcekxu"
@@ -167,4 +165,9 @@
             </div>
         </div>
     </div>
+
+    {% block aside %}
+        {% include 'post/aside.html' %}
+
+    {% endblock %}
 {% endblock %}

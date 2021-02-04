@@ -7,11 +7,6 @@
 {% endblock %}
 
 {% block main %}
-    {#    <pre>#}
-    {#    {% debug %}#}
-    {##}
-    {#</pre>#}
-
 
     <div class="sections_group">
         <div class="extra_content">
@@ -215,145 +210,15 @@
                         {% endif %}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-    <div class="four columns">
-        <div class="widget-area clearfix ">
-            <!-- Search form-->
-            <aside class="widget widget_search">
-                <h3>{% trans 'Search' %}</h3>
-                <form method="get" action="#">
-                    <input type="text" class="field" name="s" placeholder="{% trans 'Enter your search' %}"/>
-                    <input type="submit" class="submit" value="{% trans 'Search' %}"/>
-                </form>
-            </aside>
-            <!-- Text Area -->
-            <aside class="widget widget_text">
-                <h3>About our company</h3>
-                <div class="textwidget">
-                    Mauris imperdiet, urna mi, gravida sod ales. <span class="tooltip"
-                                                                       data-tooltip="Donec nisl ac turpis">Vivamus hendrerit</span>
-                    nulla erat ornare tortor in vestibulum id.
-                </div>
-            </aside>
-            <!-- Recent posts -->
-            <aside class="widget widget_mfn_recent_posts">
-                <h3>{% trans 'Latest posts' %}</h3>
-                <div class="Recent_posts">
-                    <ul>
-                        {% for post in  latest %}
-                            <li class="post ">
-                                <a href="{% url 'post_detail' post.slug %}">
-                                    <div class="photo">
-                                        <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
-                                             class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
-                                        {# <span class="c">4</span>#}
-                                    </div>
-                                    <div class="desc">
-                                        <h6>{{ post.title|truncatewords:3 }}</h6>
-                                        <span class="date">
-                                            <i class="icon-clock"></i>{{ post.created_at|date:"D, d M Y" }}
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </aside>
-            <!-- Categories Area -->
-            <aside class="widget widget_categories">
-                <h3>{% trans 'Categories' %}</h3>
-                <ul>
-                    {% for category in categories %}
-                        <li class="cat-item cat-item-61">
-                            <a href="#">{{ category.name|capfirst }}</a>
-                        </li>
+    {% block aside %}
+        {% include 'post/aside.html' %}
 
-                    {% endfor %}
+    {% endblock %}
 
-
-                </ul>
-            </aside>
-            <!-- Archives Area -->
-            <aside id="archives-3" class="widget widget_archive">
-                <h3>{% trans 'Archives' %}</h3>
-                <ul>
-                    <li>
-                        <a href='#'>May 2014</a>
-                    </li>
-                    <li>
-                        <a href='#'>April 2014</a>
-                    </li>
-                </ul>
-            </aside>
-            <!-- Recent Comments Area -->
-            {#            <aside class="widget widget_mfn_recent_comments">#}
-            {#                <h3>Recent comments</h3>#}
-            {#                <div class="Recent_comments">#}
-            {#                    <ul>#}
-            {#                        <li>#}
-            {#                            <span class="date_label">March 31, 2015</span>#}
-            {#                            <p>#}
-            {#                                <i class="icon-user"></i><strong>Muffin Group</strong> commented on <a#}
-            {#                                    href="blog-single-content-builder.html#comment-7"#}
-            {#                                    title="Muffin Group | Content builder for posts">Content builder for posts</a>#}
-            {#                            </p>#}
-            {#                        </li>#}
-            {#                        <li>#}
-            {#                            <span class="date_label">March 31, 2015</span>#}
-            {#                            <p>#}
-            {#                                <i class="icon-user"></i><strong>Muffin Group</strong> commented on <a#}
-            {#                                    href="blog-single-content-builder.html#comment-6"#}
-            {#                                    title="Muffin Group | Content builder for posts">Content builder for posts</a>#}
-            {#                            </p>#}
-            {#                        </li>#}
-            {#                    </ul>#}
-            {#                </div>#}
-            {#            </aside>#}
-            <!-- Meta Links Area -->
-            {#            <aside id="meta-3" class="widget widget_meta">#}
-            {#                <h3>Meta</h3>#}
-            {#                <ul>#}
-            {#                    <li>#}
-            {#                        <a href="#">Log in</a>#}
-            {#                    </li>#}
-            {#                    <li>#}
-            {#                        <a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a>#}
-            {#                    </li>#}
-            {#                    <li>#}
-            {#                        <a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a>#}
-            {#                    </li>#}
-            {#                    <li>#}
-            {#                        <a href="https://wordpress.org/"#}
-            {#                           title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a>#}
-            {#                    </li>#}
-            {#                </ul>#}
-            {#            </aside>#}
-            <!--Tag Cloud -->
-            {#            <aside class="widget widget_tag_cloud">#}
-            {#                <h3>Tags</h3>#}
-            {#                <div class="tagcloud">#}
-            {#                    <a href='tag-page.html' class='tag-link-20' title='3 topics'>css3</a> <a href='tag-page.html'#}
-            {#                                                                                             class='tag-link-21'#}
-            {#                                                                                             title='2 topics'>design</a>#}
-            {#                    <a href='tag-page.html' class='tag-link-22' title='2 topics'>eclipse</a> <a href='tag-page.html'#}
-            {#                                                                                                class='tag-link-23'#}
-            {#                                                                                                title='2 topics'>framework</a>#}
-            {#                    <a href='tag-page.html' class='tag-link-24' title='2 topics'>grid</a> <a href='tag-page.html'#}
-            {#                                                                                             class='tag-link-25'#}
-            {#                                                                                             title='2 topics'>html5</a>#}
-            {#                    <a href='tag-page.html' class='tag-link-26' title='2 topics'>mysql</a> <a href='tag-page.html'#}
-            {#                                                                                              class='tag-link-27'#}
-            {#                                                                                              title='2 topics'>themeforest</a>#}
-            {#                    <a href='tag-page.html' class='tag-link-28' title='2 topics'>wordpress</a> <a href='tag-page.html'#}
-            {#                                                                                                  class='tag-link-29'#}
-            {#                                                                                                  title='2 topics'>zend</a>#}
-            {#                </div>#}
-            {#            </aside>#}
-        </div>
-    </div>
 
 {% endblock %}
 

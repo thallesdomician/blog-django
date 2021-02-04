@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 23:28+0000\n"
+"POT-Creation-Date: 2021-02-04 05:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: post/models.py:13 post/templates/post/post_list.html:23
-#: post/templates/post/post_list.html:133
-#: post/templates/post/post_list.html:241
+#: post/forms.py:9
+msgid "Content"
+msgstr "Conteúdo"
+
+#: post/models.py:13 post/templates/post/aside.html:50
+#: post/templates/post/post_list.html:24 post/templates/post/post_list.html:134
 msgid "Categories"
 msgstr "Categorias"
 
-#: post/templates/post/post_list.html:20
+#: post/templates/post/aside.html:8 post/templates/post/aside.html:11
+msgid "Search"
+msgstr "Pesquisa"
+
+#: post/templates/post/aside.html:10
+msgid "Enter your search"
+msgstr "Insira sua pesquisa"
+
+#: post/templates/post/aside.html:16
+msgid "About me"
+msgstr "Sobre mim"
+
+#: post/templates/post/aside.html:25
+msgid "Latest posts"
+msgstr "Últimos posts"
+
+#: post/templates/post/aside.html:64
+msgid "Archives"
+msgstr "Arquivos"
+
+#: post/templates/post/post_confirm_delete.html:15
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: post/templates/post/post_confirm_delete.html:16
+#: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
+msgid "Yes"
+msgstr "Sim"
+
+#: post/templates/post/post_confirm_delete.html:17
+msgid "Come back"
+msgstr "Voltar"
+
+#: post/templates/post/post_list.html:21
 msgid "Filter by"
 msgstr "Filtrar por"
 
-#: post/templates/post/post_list.html:168
+#: post/templates/post/post_list.html:172
 msgid "Read more"
 msgstr "Leia mais"
 
 #: post/templates/post/post_list.html:188
-msgid "Next page"
+#, fuzzy
+#| msgid "Next page"
+msgid "First page"
 msgstr "Próxima página"
 
-#: post/templates/post/post_list.html:200
-#: post/templates/post/post_list.html:203
-msgid "Search"
-msgstr "Pesquisa"
+#: post/templates/post/post_list.html:204
+#, fuzzy
+#| msgid "Next page"
+msgid "Last page"
+msgstr "Próxima página"
 
-#: post/templates/post/post_list.html:202
-msgid "Enter your search"
-msgstr "Insira sua pesquisa"
-
-#: post/templates/post/post_list.html:217
-msgid "Latest posts"
-msgstr "Últimos posts"
-
-#: post/templates/post/post_list.html:255
-msgid "Archives"
-msgstr "Arquivos"
-
-#: post/views.py:23
+#: post/views.py:26
 msgid "Blog"
 msgstr "Blog"
+
+#: post/views.py:38
+msgid "Create Post"
+msgstr "Criar Post"
+
+#: post/views.py:52
+msgid "Update Post"
+msgstr "Atualizar Post"
+
+#: templates/header.html:33
+msgid "UPDATE"
+msgstr "Atualizar"
+
+#: templates/header.html:37
+msgid "CREATE"
+msgstr "Criar"
+
+#: templates/header.html:43
+msgid "DELETE"
+msgstr "Apagar"
 
 #: venv/lib/python3.6/site-packages/colorfield/fields.py:17
 msgid "Enter a valid hex color, eg. #000000"
@@ -661,10 +708,6 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:709
 msgid "Unknown"
-msgstr ""
-
-#: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
-msgid "Yes"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:711

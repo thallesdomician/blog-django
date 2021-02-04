@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 23:28+0000\n"
+"POT-Creation-Date: 2021-02-04 05:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: post/models.py:13 post/templates/post/post_list.html:23
-#: post/templates/post/post_list.html:133
-#: post/templates/post/post_list.html:241
+#: post/forms.py:9
+msgid "Content"
+msgstr ""
+
+#: post/models.py:13 post/templates/post/aside.html:50
+#: post/templates/post/post_list.html:24 post/templates/post/post_list.html:134
 msgid "Categories"
 msgstr ""
 
-#: post/templates/post/post_list.html:20
+#: post/templates/post/aside.html:8 post/templates/post/aside.html:11
+msgid "Search"
+msgstr ""
+
+#: post/templates/post/aside.html:10
+msgid "Enter your search"
+msgstr ""
+
+#: post/templates/post/aside.html:16
+msgid "About me"
+msgstr ""
+
+#: post/templates/post/aside.html:25
+msgid "Latest posts"
+msgstr ""
+
+#: post/templates/post/aside.html:64
+msgid "Archives"
+msgstr ""
+
+#: post/templates/post/post_confirm_delete.html:15
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: post/templates/post/post_confirm_delete.html:16
+#: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
+msgid "Yes"
+msgstr ""
+
+#: post/templates/post/post_confirm_delete.html:17
+msgid "Come back"
+msgstr ""
+
+#: post/templates/post/post_list.html:21
 msgid "Filter by"
 msgstr ""
 
-#: post/templates/post/post_list.html:168
+#: post/templates/post/post_list.html:172
 msgid "Read more"
 msgstr ""
 
 #: post/templates/post/post_list.html:188
-msgid "Next page"
+msgid "First page"
 msgstr ""
 
-#: post/templates/post/post_list.html:200
-#: post/templates/post/post_list.html:203
-msgid "Search"
+#: post/templates/post/post_list.html:204
+msgid "Last page"
 msgstr ""
 
-#: post/templates/post/post_list.html:202
-msgid "Enter your search"
-msgstr ""
-
-#: post/templates/post/post_list.html:217
-msgid "Latest posts"
-msgstr ""
-
-#: post/templates/post/post_list.html:255
-msgid "Archives"
-msgstr ""
-
-#: post/views.py:23
+#: post/views.py:26
 msgid "Blog"
+msgstr ""
+
+#: post/views.py:38
+msgid "Create Post"
+msgstr ""
+
+#: post/views.py:52
+msgid "Update Post"
+msgstr ""
+
+#: templates/header.html:33
+msgid "UPDATE"
+msgstr ""
+
+#: templates/header.html:37
+msgid "CREATE"
+msgstr ""
+
+#: templates/header.html:43
+msgid "DELETE"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/colorfield/fields.py:17
@@ -661,10 +704,6 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:709
 msgid "Unknown"
-msgstr ""
-
-#: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
-msgid "Yes"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:711

@@ -1,9 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 
 {% block main %}
-    <form method="post">{% csrf_token %}
-        <p>Tem certeza que deseja deletar "{{ object }}"?</p>
-        <input type="submit" value="Confirmar">
-    </form>
+
+    <div class="sections_group">
+        <div class="section">
+            <div class="section_wrapper clearfix">
+                <div class="column one column_column">
+                    <div class="column_attr ">
+                        <form method="post">
+                            {% csrf_token %}
+                            <h2>{% trans 'Are you sure you want to delete' %}"{{ object }}"?</h2>
+                            <button type="submit" class="button-stroke">{% trans 'Yes' %}</button>
+                            <a href="{% url 'post_update' object.slug %}" class="button-stroke" >{% trans 'Come back' %}</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block aside %}
+        {% include 'post/aside.html' %}
+
+    {% endblock %}
 {% endblock %}

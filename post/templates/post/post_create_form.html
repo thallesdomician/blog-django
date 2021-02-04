@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block main %}
-<form method="post" enctype="multipart/form-data">
-    {%  csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Criar">
+{% block subheader %}
+    {% include 'subheader.html' %}
+{% endblock %}
 
-</form>
+{% block main %}
+    <div class="sections_group">
+        <div class="section">
+            <div class="section_wrapper clearfix">
+                <div class="column one column_column">
+                    <div class="column_attr ">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Criar">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block aside %}
+        {% include 'post/aside.html' %}
+
+    {% endblock %}
 {% endblock %}

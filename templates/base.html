@@ -39,66 +39,15 @@
 
 </head>
 
-<body class="style-simple layout-full-width mobile-tb-left button-stroke with_aside aside_right  if-overlay no-content-padding header-below header-fw minimalist-header sticky-header sticky-white ab-hide subheader-both-center menuo-right menuo-no-borders footer-copy-center">
+<body class="style-simple layout-full-width mobile-tb-left button-stroke {% if aside %} with_aside aside_right  {% endif %} if-overlay no-content-padding header-below header-fw minimalist-header sticky-header sticky-white ab-hide subheader-both-center menuo-right menuo-no-borders footer-copy-center">
     <!-- Main Theme Wrapper -->
     <div id="Wrapper">
         <!-- Header Wrapper -->
         <div id="Header_wrapper">
             <!-- Header -->
-            <header id="Header">
-
-                <!-- Header -  Logo and Menu area -->
-                <div id="Top_bar">
-                    <div class="container">
-                        <div class="column one">
-                            <div class="top_bar_left clearfix loading">
-                                <!-- Logo-->
-                                <div class="logo">
-                                    <a id="logo" href="{% url 'home' %}" title="BeDigital - BeTheme"> <img class="scale-with-grid" src="{% static 'image-site/digital.png' %}" alt="BeDigital - BeTheme" />
-                                    </a>
-                                </div>
-                                <!-- Main menu-->
-                                <div class="menu_wrapper">
-                                    <nav id="menu" class="menu-main-menu-container">
-                                        <ul id="menu-main-menu" class="menu">
-                                            <li class="{% if request.resolver_match.url_name ==  'home' %}current_page_item{% endif %}">
-                                                <a href="{% url 'home' %}"><span>HOME</span></a>
-                                            </li>
-                                            <li class="">
-                                                <a href="agency.html"><span>AGENCY</span></a>
-                                            </li>
-                                            <li class="{% if request.resolver_match.url_name ==  'post_list' %}current_page_item{% endif %}">
-                                                <a href="{% url 'post_list' %}"><span>BLOG</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="solutions.html"><span>SOLUTIONS</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html"><span>CONTACT</span></a>
-                                            </li>
-                                            <li>
-                                                <a target="_blank" href="http://bit.ly/1M6lijQ"><span><span style="padding: 0px; color:#f2dfb3;">BUY NOW</span></span></a>
-                                            </li>
-                                        </ul>
-                                    </nav><a class="responsive-menu-toggle" href="#"><i class="icon-menu"></i></a>
-                                </div>
-                                <!-- Secondary menu area - only for certain pages -->
-                                <div class="secondary_menu_wrapper"></div>
-                                <!-- Banner area - only for certain pages-->
-                                <div class="banner_wrapper"></div>
-                                <!-- Header Searchform area-->
-                                <div class="search_wrapper">
-                                    <form method="get" id="searchform" action="#">
-
-                                        <input type="text" class="field" name="s" id="s" placeholder="Enter your search" />
-                                        <input type="submit" class="submit flv_disp_none" value="" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
             <!--Subheader area - only for certain pages -->
             {% block subheader %}
             {% endblock %}
@@ -129,9 +78,7 @@
     <script src="{% static 'js-animation/animations.js' %}"></script>
     <script src="{% static 'js/translate3d.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-    {% block js %}
-    
-    {% endblock %}
+
 
     <script>
         //<![CDATA[
@@ -150,6 +97,10 @@
         });
         //]]>
     </script>
+
+{% block js %}
+
+    {% endblock %}
 
 </body>
 

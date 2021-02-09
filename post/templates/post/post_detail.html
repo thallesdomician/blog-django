@@ -13,7 +13,32 @@
             <div class="section section-post-header">
                 <h3>{{ object.subtitle }}</h3>
 
+
                 <div class="section_wrapper clearfix">
+                    {% if user.is_authenticated %}
+
+
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix">
+                                <a href="{% url 'admin:post_post_change' post.id %}" target="_blank" class="icon_bar icon_bar_small">
+                                    <span class="t">
+                                        <i class="icon-pencil"></i>
+                                    </span>
+                                    <span class="b">
+                                        <i class="icon-pencil-line"></i>
+                                    </span>
+                                </a>
+                                <a href="{% url 'post_delete' post.slug %}" class="icon_bar icon_bar_small">
+                                    <span class="t">
+                                        <i class="icon-trash"></i>
+                                    </span>
+                                    <span class="b">
+                                    <i class="icon-trash-line"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
                     <!-- Posts Navigation -->
                     <!-- One full width row-->
 
@@ -42,10 +67,7 @@
                                             {% for category in categories %}
                                                 <li>
 
-                                                    <a href="tag-page.html" style="
-                                                            background-color: {{ category.color_background }};
-                                                            color: {{ category.color_text }}
-                                                            ">{{ category.name }}</a>
+                                                    <a href="tag-page.html">{{ category.name }}</a>
                                                 </li>
 
                                             {% endfor %}

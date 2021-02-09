@@ -21,46 +21,54 @@
                 </div>
             </aside>
             <!-- Recent posts -->
-            <aside class="widget widget_mfn_recent_posts">
-                <h3>{% trans 'Latest posts' %}</h3>
-                <div class="Recent_posts">
-                    <ul>
-                        {% for post in  latest %}
-                            <li class="post ">
-                                <a href="{% url 'post_detail' post.slug %}">
-                                    {% if post.thumbnail_image_url %}
-                                        <div class="photo">
-                                            <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
-                                                 class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
-                                            {# <span class="c">4</span>#}
-                                        </div>
-                                    {% endif %}
-                                    <div class="desc">
-                                        <h6>{{ post.title|truncatewords:3 }}</h6>
-                                        <span class="date">
+            {% if latest %}
+
+                <aside class="widget widget_mfn_recent_posts">
+                    <h3>{% trans 'Latest posts' %}</h3>
+                    <div class="Recent_posts">
+                        <ul>
+                            {% for post in  latest %}
+                                <li class="post ">
+                                    <a href="{% url 'post_detail' post.slug %}">
+                                        {% if post.thumbnail_image_url %}
+                                            <div class="photo">
+                                                <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
+                                                     class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
+                                                {# <span class="c">4</span>#}
+                                            </div>
+                                        {% endif %}
+                                        <div class="desc">
+                                            <h6>{{ post.title|truncatewords:3 }}</h6>
+                                            <span class="date">
                                             <i class="icon-clock"></i>{{ post.created_at|date:"D, d M Y" }}
                                         </span>
-                                    </div>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </aside>
+                                        </div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+            {% endif %}
+
             <!-- Categories Area -->
-            <aside class="widget widget_categories">
-                <h3>{% trans 'Categories' %}</h3>
-                <ul>
-                    {% for category in categories %}
-                        <li class="cat-item cat-item-61">
-                            <a href="#">{{ category.name|capfirst }}</a>
-                        </li>
-
-                    {% endfor %}
+            {% if categories %}
 
 
-                </ul>
-            </aside>
+                <aside class="widget widget_categories">
+                    <h3>{% trans 'Categories' %}</h3>
+                    <ul>
+                        {% for category in categories %}
+                            <li class="cat-item cat-item-61">
+                                <a href="#">{{ category.name|capfirst }}</a>
+                            </li>
+
+                        {% endfor %}
+
+
+                    </ul>
+                </aside>
+            {% endif %}
             <!-- Archives Area -->
             <aside id="archives-3" class="widget widget_archive">
                 <h3>{% trans 'Archives' %}</h3>

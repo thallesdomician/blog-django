@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 05:22+0000\n"
+"POT-Creation-Date: 2021-02-08 23:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: post/forms.py:9
-msgid "Content"
-msgstr "Conteúdo"
+#: post/admin.py:9 post/admin.py:11
+msgid "Marcos' Blog"
+msgstr "Blog do Marcos"
 
-#: post/models.py:13 post/templates/post/aside.html:50
+#: post/admin.py:10
+#, fuzzy
+#| msgid "Confirmation"
+msgid "Administration"
+msgstr "Confirmação"
+
+#: post/models.py:16 post/models.py:36 post/models.py:51
+#: post/templates/post/aside.html:52 post/templates/post/post_detail.html:39
 #: post/templates/post/post_list.html:24 post/templates/post/post_list.html:134
 msgid "Categories"
 msgstr "Categorias"
+
+#: post/models.py:30
+msgid "Title"
+msgstr "Título"
+
+#: post/models.py:31
+#, fuzzy
+#| msgid "Title"
+msgid "Subtitle"
+msgstr "Subtítulo"
+
+#: post/models.py:32
+msgid "Header Image"
+msgstr "Imagem de Cabeçalho"
+
+#: post/models.py:33
+msgid "Thumbnail Image"
+msgstr "Imagem Thumbnail"
+
+#: post/models.py:34
+msgid "Resume"
+msgstr "Resumo"
+
+#: post/models.py:35
+msgid "Content"
+msgstr "Conteúdo"
+
+#: post/models.py:38
+#, fuzzy
+#| msgid "Create Post"
+msgid "Created"
+msgstr "Criado em"
+
+#: post/models.py:39
+#, fuzzy
+#| msgid "Update Post"
+msgid "Updated"
+msgstr "Atualizado em"
+
+#: post/models.py:71
+msgid "Thumbnail"
+msgstr ""
+
+#: post/models.py:77
+#: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:360
+msgid "Image"
+msgstr "Imagem"
+
+#: post/models.py:82
+msgid "Headers"
+msgstr "Cabeçalhos"
+
+#: post/models.py:85
+msgid "Images"
+msgstr "Imagens"
+
+#: post/models.py:91
+msgid "Dates"
+msgstr "Datas"
 
 #: post/templates/post/aside.html:8 post/templates/post/aside.html:11
 msgid "Search"
@@ -43,20 +109,24 @@ msgstr "Sobre mim"
 msgid "Latest posts"
 msgstr "Últimos posts"
 
-#: post/templates/post/aside.html:64
+#: post/templates/post/aside.html:66
 msgid "Archives"
 msgstr "Arquivos"
 
 #: post/templates/post/post_confirm_delete.html:15
-msgid "Are you sure you want to delete"
-msgstr ""
+msgid "Confirmation"
+msgstr "Confirmação"
 
 #: post/templates/post/post_confirm_delete.html:16
+msgid "Are you sure you want to delete"
+msgstr "Você tem certeza que deseja deletar"
+
+#: post/templates/post/post_confirm_delete.html:17
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
 msgid "Yes"
 msgstr "Sim"
 
-#: post/templates/post/post_confirm_delete.html:17
+#: post/templates/post/post_confirm_delete.html:18
 msgid "Come back"
 msgstr "Voltar"
 
@@ -68,13 +138,13 @@ msgstr "Filtrar por"
 msgid "Read more"
 msgstr "Leia mais"
 
-#: post/templates/post/post_list.html:188
+#: post/templates/post/post_list.html:189
 #, fuzzy
 #| msgid "Next page"
 msgid "First page"
 msgstr "Próxima página"
 
-#: post/templates/post/post_list.html:204
+#: post/templates/post/post_list.html:206
 #, fuzzy
 #| msgid "Next page"
 msgid "Last page"
@@ -88,21 +158,9 @@ msgstr "Blog"
 msgid "Create Post"
 msgstr "Criar Post"
 
-#: post/views.py:52
+#: post/views.py:52 post/views.py:64
 msgid "Update Post"
 msgstr "Atualizar Post"
-
-#: templates/header.html:33
-msgid "UPDATE"
-msgstr "Atualizar"
-
-#: templates/header.html:37
-msgid "CREATE"
-msgstr "Criar"
-
-#: templates/header.html:43
-msgid "DELETE"
-msgstr "Apagar"
 
 #: venv/lib/python3.6/site-packages/colorfield/fields.py:17
 msgid "Enter a valid hex color, eg. #000000"
@@ -456,7 +514,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2081
 msgid "Text"
-msgstr ""
+msgstr "Texto"
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/__init__.py:2109
 #, python-format
@@ -495,10 +553,6 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:221
 msgid "File"
-msgstr ""
-
-#: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:360
-msgid "Image"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/related.py:778
@@ -651,7 +705,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/formsets.py:375
 msgid "Delete"
-msgstr ""
+msgstr "Deletar"
 
 #: venv/lib/python3.6/site-packages/django/forms/models.py:751
 #, python-format
@@ -712,7 +766,7 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:711
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: venv/lib/python3.6/site-packages/django/template/defaultfilters.py:788
 msgid "yes,no,maybe"
@@ -881,51 +935,51 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "jan"
-msgstr ""
+msgstr "jan"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "feb"
-msgstr ""
+msgstr "fev"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "apr"
-msgstr ""
+msgstr "abr"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "may"
-msgstr ""
+msgstr "mai"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:19
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "aug"
-msgstr ""
+msgstr "ago"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "sep"
-msgstr ""
+msgstr "set"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "oct"
-msgstr ""
+msgstr "out"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:20
 msgid "dec"
-msgstr ""
+msgstr "dez"
 
 #: venv/lib/python3.6/site-packages/django/utils/dates.py:23
 msgctxt "abbrev. month"
@@ -1282,3 +1336,19 @@ msgstr ""
 #: venv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:408
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#: venv/lib/python3.6/site-packages/tinymce/views.py:57
+msgid "Error running spellchecker"
+msgstr ""
+
+#~ msgid "Welcome to Marcos' Blog"
+#~ msgstr "Bem Vindo ao blog do Marcos"
+
+#~ msgid "UPDATE"
+#~ msgstr "Atualizar"
+
+#~ msgid "CREATE"
+#~ msgstr "Criar"
+
+#~ msgid "DELETE"
+#~ msgstr "Apagar"

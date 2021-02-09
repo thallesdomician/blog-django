@@ -28,11 +28,13 @@
                         {% for post in  latest %}
                             <li class="post ">
                                 <a href="{% url 'post_detail' post.slug %}">
-                                    <div class="photo">
-                                        <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
-                                             class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
-                                        {# <span class="c">4</span>#}
-                                    </div>
+                                    {% if post.thumbnail_image_url %}
+                                        <div class="photo">
+                                            <img width="80" height="80" src="{{ post.thumbnail_image.url }}"
+                                                 class="scale-with-grid wp-post-image" alt="{{ post.title }}"/>
+                                            {# <span class="c">4</span>#}
+                                        </div>
+                                    {% endif %}
                                     <div class="desc">
                                         <h6>{{ post.title|truncatewords:3 }}</h6>
                                         <span class="date">

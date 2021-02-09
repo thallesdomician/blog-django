@@ -108,11 +108,11 @@
                                         <div class="image_wrapper">
                                             <a href="{% url 'post_detail' post.slug %}">
                                                 <div class="mask"></div>
-                                                <img width="576" height="450" src="{{ post.thumbnail_image.url }}"
+                                                <img width="576" height="450" src="{{ post.thumbnail_image_url }}"
                                                      class="scale-with-grid wp-post-image" alt="beauty_portfolio_2"/>
                                             </a>
                                             <div class="image_links double">
-                                                <a href="{{ post.thumbnail_image.url }}" class="zoom" rel="prettyphoto"><i
+                                                <a href="{{ post.thumbnail_image_url }}" class="zoom" rel="prettyphoto"><i
                                                         class="icon-search"></i></a><a
                                                     href="{% url 'post_detail' post.slug %}" class="link"><i
                                                     class="icon-link"></i></a>
@@ -154,7 +154,7 @@
                                                 </h2>
                                             </div>
                                             <div class="post-excerpt">
-                                                <span class="big">{{ post.resume|truncatewords:25 }}</span>
+                                                <span class="big">{{ post.resume|truncatewords:25|safe }}</span>
                                             </div>
                                             <div class="post-footer">
                                                 {#                                                <div class="button-love">#}
@@ -179,34 +179,37 @@
                         </div>
                         <!-- One full width row-->
                         {% if post_list %}
+                            {% if page_obj.has_previous or page_obj.has_next %}
 
 
-                            <div class="column one pager_wrapper">
-                                <!-- Navigation Area -->
-                                <div class="pager">
-                                    {% if page_obj.has_previous %}
-                                        <a class="prev_page" href="?page=1">{% trans 'First page' %}<i
-                                                class="icon-right-open"></i></a>
-                                    {% endif %}
-                                    <div class="pages">
-
+                                <div class="column one pager_wrapper">
+                                    <!-- Navigation Area -->
+                                    <div class="pager">
                                         {% if page_obj.has_previous %}
-                                            <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                                            <a class="prev_page" href="?page=1">{% trans 'First page' %}<i
+                                                    class="icon-right-open"></i></a>
                                         {% endif %}
+                                        <div class="pages">
 
-                                        <a href="?page={{ page_obj.number }}" class="active">{{ page_obj.number }}</a>
+                                            {% if page_obj.has_previous %}
+                                                <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                                            {% endif %}
+
+                                            <a href="?page={{ page_obj.number }}"
+                                               class="active">{{ page_obj.number }}</a>
+                                            {% if page_obj.has_next %}
+                                                <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                                            {% endif %}
+                                        </div>
                                         {% if page_obj.has_next %}
-                                            <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                                            <a class="prev_page"
+                                               href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last page' %}<i
+                                                    class="icon-right-open"></i></a>
                                         {% endif %}
-                                    </div>
-                                    {% if page_obj.has_next %}
-                                        <a class="prev_page"
-                                           href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last page' %}<i
-                                                class="icon-right-open"></i></a>
-                                    {% endif %}
 
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
                         {% endif %}
                     </div>
                 </div>

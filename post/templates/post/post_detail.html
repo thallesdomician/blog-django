@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block subheader %}
     {% include 'subheader.html' with subheader=object.title %}
 {% endblock %}
@@ -10,6 +12,7 @@
              style="padding-top: 30px">
             <div class="section section-post-header">
                 <h3>{{ object.subtitle }}</h3>
+
                 <div class="section_wrapper clearfix">
                     <!-- Posts Navigation -->
                     <!-- One full width row-->
@@ -33,7 +36,7 @@
 														</time></span>
                                 </div>
                                 <div class="category mata-tags">
-                                    <span class="cat-btn">Tags <i class="icon-down-dir"></i></span>
+                                    <span class="cat-btn">{% trans 'Categories' %} <i class="icon-down-dir"></i></span>
                                     <div class="cat-wrapper">
                                         <ul>
                                             {% for category in categories %}
@@ -42,16 +45,10 @@
                                                     <a href="tag-page.html" style="
                                                             background-color: {{ category.color_background }};
                                                             color: {{ category.color_text }}
-                                                            " >{{ category.name }}</a>
+                                                            ">{{ category.name }}</a>
                                                 </li>
 
                                             {% endfor %}
-                                            <li>
-                                                <a href="tag-page.html">grid</a>
-                                            </li>
-                                            <li>
-                                                <a href="tag-page.html">mysql</a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -60,23 +57,28 @@
                     </div>
                     <!-- Post Featured Element (image / video / gallery)-->
                     <!-- One full width row-->
-                    <div class="column one">
+                    {% if post.header_image_url %}
 
-                        <div class="image_frame scale-with-grid">
-                            <div class="image_wrapper">
-                                <a href="{{ post.header_image.url }}" rel="prettyphoto">
-                                    <div class="mask"></div>
-                                    <img width="1200" height="480" src="{{ post.header_image.url }}"
-                                         class="scale-with-grid wp-post-image" alt="beauty_portfolio_2">
-                                </a>
-                                <div class="image_links">
-                                    <a href="{{ post.header_image.url }}" class="zoom" rel="prettyphoto"><i
-                                            class="icon-search"></i></a>
+
+                        <div class="column one">
+
+                            <div class="image_frame scale-with-grid">
+                                <div class="image_wrapper">
+                                    <a href="{{ post.header_image_url }}" rel="prettyphoto">
+                                        <div class="mask"></div>
+                                        <img width="1200" height="480" src="{{ post.header_image_url }}"
+                                             class="scale-with-grid wp-post-image" alt="beauty_portfolio_2">
+                                    </a>
+                                    <div class="image_links">
+                                        <a href="{{ post.header_image_url }}" class="zoom" rel="prettyphoto"><i
+                                                class="icon-search"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
+
             </div>
             <!-- Post Content-->
             <div class="post-wrapper-content">

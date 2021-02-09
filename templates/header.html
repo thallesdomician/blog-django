@@ -27,23 +27,23 @@
                                     <li class="{% if request.resolver_match.url_name ==  'post_list' %}current_page_item{% endif %}">
                                         <a href="{% url 'post_list' %}"><span>BLOG</span></a>
                                     </li>
-                                    {% if user.is_authenticated %}
-                                        {% if request.resolver_match.url_name ==  'post_detail' %}
-                                            <li class="{% if request.resolver_match.url_name ==  'post_update' %}current_page_item{% endif %}">
-                                                <a href="{% url 'post_update' post.slug %}"><span><i class="icon-pencil"></i>{% trans 'UPDATE' %}</span></a>
-                                            </li>
-                                        {% else %}
-                                            <li class="{% if request.resolver_match.url_name ==  'post_create' %}current_page_item{% endif %}">
-                                                <a href="{% url 'post_create' %}"><span><i class="icon-list-add"></i>{% trans 'CREATE' %}</span></a>
-                                            </li>
-                                        {% endif %}
-
-                                        {% if request.resolver_match.url_name  ==  'post_update' %}
-                                        <li class="{% if request.resolver_match.url_name ==  'post_delete' %}current_page_item{% endif %} ">
-                                                <a href="{% url 'post_delete' post.slug %}"><span><i class="icon-trash"></i> {% trans 'DELETE' %}</span></a>
-                                            </li>
-                                        {% endif %}
-                                    {% endif %}
+{#                                    {% if user.is_authenticated %}#}
+{#                                        {% if request.resolver_match.url_name ==  'post_detail' %}#}
+{#                                            <li class="{% if request.resolver_match.url_name ==  'post_update' %}current_page_item{% endif %}">#}
+{#                                                <a href="{% url 'post_update' post.slug %}"><span><i class="icon-pencil"></i>{% trans 'UPDATE' %}</span></a>#}
+{#                                            </li>#}
+{#                                        {% else %}#}
+{#                                            <li class="{% if request.resolver_match.url_name ==  'post_create' %}current_page_item{% endif %}">#}
+{#                                                <a href="{% url 'post_create' %}"><span><i class="icon-list-add"></i>{% trans 'CREATE' %}</span></a>#}
+{#                                            </li>#}
+{#                                        {% endif %}#}
+{##}
+{#                                        {% if request.resolver_match.url_name  ==  'post_update' %}#}
+{#                                        <li class="{% if request.resolver_match.url_name ==  'post_delete' %}current_page_item{% endif %} ">#}
+{#                                                <a href="{% url 'post_delete' post.slug %}"><span><i class="icon-trash"></i> {% trans 'DELETE' %}</span></a>#}
+{#                                            </li>#}
+{#                                        {% endif %}#}
+{#                                    {% endif %}#}
                                 </ul>
                             </nav>
                             <a class="responsive-menu-toggle" href="#"><i class="icon-menu"></i></a>

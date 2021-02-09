@@ -12,9 +12,10 @@
                     <div class="column_attr ">
                         <form method="post">
                             {% csrf_token %}
-                            <h2>{% trans 'Are you sure you want to delete' %}"{{ object }}"?</h2>
+                            <h2>{% trans 'Confirmation' %}</h2>
+                            <p>{% trans 'Are you sure you want to delete' %} "{{ object }}"?</p>
                             <button type="submit" class="button-stroke">{% trans 'Yes' %}</button>
-                            <a href="{% url 'post_update' object.slug %}" class="button-stroke" >{% trans 'Come back' %}</a>
+                            <a href="{% url 'post_detail' object.slug %}" class="button-stroke" >{% trans 'Come back' %}</a>
                         </form>
 
                     </div>

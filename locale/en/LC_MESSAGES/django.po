@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 05:22+0000\n"
+"POT-Creation-Date: 2021-02-08 23:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: post/forms.py:9
+#: post/admin.py:9 post/admin.py:11
+msgid "Marcos' Blog"
+msgstr ""
+
+#: post/admin.py:10
+msgid "Administration"
+msgstr ""
+
+#: post/models.py:16 post/models.py:36 post/models.py:51
+#: post/templates/post/aside.html:52 post/templates/post/post_detail.html:39
+#: post/templates/post/post_list.html:24 post/templates/post/post_list.html:134
+msgid "Categories"
+msgstr ""
+
+#: post/models.py:30
+msgid "Title"
+msgstr ""
+
+#: post/models.py:31
+msgid "Subtitle"
+msgstr ""
+
+#: post/models.py:32
+msgid "Header Image"
+msgstr ""
+
+#: post/models.py:33
+msgid "Thumbnail Image"
+msgstr ""
+
+#: post/models.py:34
+msgid "Resume"
+msgstr ""
+
+#: post/models.py:35
 msgid "Content"
 msgstr ""
 
-#: post/models.py:13 post/templates/post/aside.html:50
-#: post/templates/post/post_list.html:24 post/templates/post/post_list.html:134
-msgid "Categories"
+#: post/models.py:38
+msgid "Created"
+msgstr ""
+
+#: post/models.py:39
+msgid "Updated"
+msgstr ""
+
+#: post/models.py:71
+msgid "Thumbnail"
+msgstr ""
+
+#: post/models.py:77
+#: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:360
+msgid "Image"
+msgstr ""
+
+#: post/models.py:82
+msgid "Headers"
+msgstr ""
+
+#: post/models.py:85
+msgid "Images"
+msgstr ""
+
+#: post/models.py:91
+msgid "Dates"
 msgstr ""
 
 #: post/templates/post/aside.html:8 post/templates/post/aside.html:11
@@ -43,20 +101,24 @@ msgstr ""
 msgid "Latest posts"
 msgstr ""
 
-#: post/templates/post/aside.html:64
+#: post/templates/post/aside.html:66
 msgid "Archives"
 msgstr ""
 
 #: post/templates/post/post_confirm_delete.html:15
-msgid "Are you sure you want to delete"
+msgid "Confirmation"
 msgstr ""
 
 #: post/templates/post/post_confirm_delete.html:16
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: post/templates/post/post_confirm_delete.html:17
 #: venv/lib/python3.6/site-packages/django/forms/widgets.py:710
 msgid "Yes"
 msgstr ""
 
-#: post/templates/post/post_confirm_delete.html:17
+#: post/templates/post/post_confirm_delete.html:18
 msgid "Come back"
 msgstr ""
 
@@ -68,11 +130,11 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: post/templates/post/post_list.html:188
+#: post/templates/post/post_list.html:189
 msgid "First page"
 msgstr ""
 
-#: post/templates/post/post_list.html:204
+#: post/templates/post/post_list.html:206
 msgid "Last page"
 msgstr ""
 
@@ -84,20 +146,8 @@ msgstr ""
 msgid "Create Post"
 msgstr ""
 
-#: post/views.py:52
+#: post/views.py:52 post/views.py:64
 msgid "Update Post"
-msgstr ""
-
-#: templates/header.html:33
-msgid "UPDATE"
-msgstr ""
-
-#: templates/header.html:37
-msgid "CREATE"
-msgstr ""
-
-#: templates/header.html:43
-msgid "DELETE"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/colorfield/fields.py:17
@@ -491,10 +541,6 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:221
 msgid "File"
-msgstr ""
-
-#: venv/lib/python3.6/site-packages/django/db/models/fields/files.py:360
-msgid "Image"
 msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/db/models/fields/related.py:778
@@ -1277,4 +1323,8 @@ msgstr ""
 
 #: venv/lib/python3.6/site-packages/django/views/templates/default_urlconf.html:408
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.6/site-packages/tinymce/views.py:57
+msgid "Error running spellchecker"
 msgstr ""
